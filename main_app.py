@@ -131,30 +131,14 @@ try:
     # Sección 5: DESCARGAS
     st.sidebar.markdown("---")
     with st.sidebar.expander("📥 DESCARGAS", expanded=False):
-        col1, col2 = st.columns(2)
-        
-        with col1:
-            csv = df_filtered.to_csv(index=False)
-            st.download_button(
-                label="📊 CSV Filtrado",
-                data=csv,
-                file_name="datos_filtrados.csv",
-                mime="text/csv",
-                use_container_width=True
-            )
-        
-        with col2:
-            excel_buffer = pd.ExcelWriter("/tmp/datos.xlsx", engine='openpyxl')
-            df_filtered.to_excel(excel_buffer, sheet_name="Datos", index=False)
-            excel_buffer.close()
-            with open("/tmp/datos.xlsx", "rb") as f:
-                st.download_button(
-                    label="📈 Excel",
-                    data=f.read(),
-                    file_name="datos_filtrados.xlsx",
-                    mime="application/vnd.ms-excel",
-                    use_container_width=True
-                )
+        csv = df_filtered.to_csv(index=False)
+        st.download_button(
+            label="📊 Descargar CSV Filtrado",
+            data=csv,
+            file_name="datos_filtrados.csv",
+            mime="text/csv",
+            use_container_width=True
+        )
     
     # Sección 6: INFORMACIÓN
     st.sidebar.markdown("---")
