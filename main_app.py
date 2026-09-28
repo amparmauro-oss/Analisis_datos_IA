@@ -39,7 +39,7 @@ try:
     df = load_data()
     
     # ==================== SIDEBAR ====================
-    st.sidebar.image("https://via.placeholder.com/200x50?text=Logo", use_column_width=True)
+    st.sidebar.image("https://via.placeholder.com/200x50?text=Logo", use_container_width=True)
     st.sidebar.title("🎛️ PANEL DE CONTROL")
     st.sidebar.markdown("---")
     
